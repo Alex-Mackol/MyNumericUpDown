@@ -144,9 +144,9 @@ namespace MyControls
             RaiseEvent(arguments);
         }
 
-        private static object CoerceValue(DependencyObject obj, object baseValue)
+        private static object CoerceValue(DependencyObject sender, object baseValue)
         {
-            NumericUpDown numericUpDown = obj as NumericUpDown;
+            NumericUpDown numericUpDown = sender as NumericUpDown;
             double value = (double)baseValue;
             value = Math.Round(Math.Max(numericUpDown.Minimum, Math.Min(numericUpDown.Maximum, value)), numericUpDown.SymbolsAfterDot);
 
